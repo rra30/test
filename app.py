@@ -16,14 +16,15 @@ st.set_page_config(
 st.title("Test-Project-🌚")
 
 with st.sidebar:
+    user_input = st.text_input("directory change")
+    os.chdir = (user_input)
     st.title(st.write("PATH : ",
                       os.getcwd()),
              st.write("subdirectory : ",os.listdir(path=".")))
 
-with st.sidebar:
+#with st.sidebar:
 #    st.header(st.text_input("chdir"))
-    user_input = st.text_input("directory change")
-    os.chdir = (user_input)
+
     
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
