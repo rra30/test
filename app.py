@@ -14,8 +14,8 @@ st.set_page_config(
     initial_sidebar_state="expanded")
 
 st.title("Test-Project-🌚")
-st.header(st.write("PATH : ",os.getcwd()))
-st.header(st.write("subdirectory : ",os.listdir(path=".")))
+st.header(st.write("PATH : ",os.getcwd()),st.write("subdirectory : ",os.listdir(path=".")))
+#st.header(st.write("subdirectory : ",os.listdir(path=".")))
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
