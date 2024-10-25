@@ -4,16 +4,19 @@ import cv2
 import numpy as np
 import io
 import PIL
+import os
 from PIL import Image
 
 st.set_page_config(
     page_title="test",
     page_icon="🌚",
     layout="centered",
-    initial_sidebar_state="expanded")
+    initial_sidebar_state="expanded",
+    st.write(os.getcwd())
+)
 
-st.title("Fire/smoke-detection Project :fire:")
-source_model = st.sidebar.radio("Select Source",["Model_Create","Model_test"])
+st.title("Test-Project-🌚")
+source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
     Test_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
