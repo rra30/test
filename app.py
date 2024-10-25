@@ -16,7 +16,7 @@ st.title("Fire/smoke-detection Project :fire:")
 source_model = st.sidebar.radio("Select Source",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
-    st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
+    Test_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
 
 if source_model == "Model_Create":
-    st.sidebar.radio("Choose Model type",["Load_Model","study_Model"])
+    Study_model = st.sidebar.radio("Choose Model type",["Load_Model","study_Model"])
