@@ -20,7 +20,7 @@ with st.sidebar:
 
 with st.sidebar:
     st.header(dir = st.text_input("change_dir"))
-    st.header(os.chdir = (dir))
+    st.header(os.chdir == (dir))
     
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
