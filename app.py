@@ -20,3 +20,30 @@ if source_model == "Model_test":
 
 if source_model == "Model_Create":
     Study_model = st.sidebar.radio("Choose Model type",["Load_Model","study_Model"])
+
+if Test_model == "Test_Image":
+    st.sidebar.header("Imgae_Upload")
+    input = st.sidebar.file_uploader("Choose an image.", type=("jpg","png"))
+    
+    if input is not None:
+        uploaded_image = PIL.Image.open(input)
+        uploaded_image_cv =cv2.cvtColor(np.array(uploaded_image), cv2.COLOR_RGB2BGR)
+        visualized_image = utils.predict_image(uploaded_image_cv, conf_threshold = conf_threshold)
+        st.image(visualized_image, channels = "BGR")
+
+if Test_model == "Test_Video":
+    st.sidebar.header("Upload")
+    input = st.sidebar.file_uploader("Choose an video.", type=("mp4"))
+
+    if input is not None:
+        g = io.BytesIO(input.read())
+        temporary_location = "upload.mp4"
+
+        with open(temporary_location, "wb") as out:
+            out.write(g.read())
+
+        out.close()
+    if temporary_location is not None:
+        play_video(temporary_location)
+        if st.button("Replay", type="primary"):
+            pass
