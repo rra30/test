@@ -11,14 +11,14 @@ st.set_page_config(
     page_title="test",
     page_icon="🌚",
     layout="centered",
-    initial_sidebar_state="expanded",
-    st.write(os.getcwd))
+    initial_sidebar_state="expanded")
 
 st.title("Test-Project-🌚")
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
     Test_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
+    st.write(os.getcwd)
 
 if source_model == "Model_Create":
     Study_model = st.sidebar.radio("Choose Model type",["Load_Model","study_Model"])
