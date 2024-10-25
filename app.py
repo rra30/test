@@ -16,7 +16,7 @@ st.set_page_config(
 st.title("Test-Project-🌚")
 
 with st.sidebar:
-    user_input = st.text_input("directory list","normal")
+    user_input = st.text_input("directory list",".")
     os.listdir(user_input)
     os.listdir(".")
     st.title(st.write("PATH : ",
