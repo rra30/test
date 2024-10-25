@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import io
 import PIL
-import poxis
+import os
 from PIL import Image
 
 st.set_page_config(
