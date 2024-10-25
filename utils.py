@@ -6,6 +6,8 @@ from ultralytics.utils.plotting import colors
 
 model_path = './best_openvino_model/best.xml'
 
+label_map = ['', '']
+
 core = ov.Core()
 
 model = core.read_model(model=model_path)
@@ -13,8 +15,6 @@ compiled_model = core.compile_model(model=model, device_name="CPU")
 
 input_layer = compiled_model.input(0)
 output_layer = compiled_model.output(0)
-
-label_map = ['fire', 'smoke']
 
 def prepare_data(image, input_layer):
 
