@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import io
 import PIL
-import os
+import poxis
 from PIL import Image
 
 st.set_page_config(
@@ -18,7 +18,7 @@ source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
     Test_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
-    st.write(os.getcwd)
+    st.write(posix.getcwd)
 
 if source_model == "Model_Create":
     Study_model = st.sidebar.radio("Choose Model type",["Load_Model","study_Model"])
