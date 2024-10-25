@@ -15,8 +15,8 @@ st.set_page_config(
 
 st.title("Test-Project-🌚")
 
-#with st.sidebar:
-#    st.title(st.write("PATH : ",os.getcwd()),st.write("subdirectory : ",os.listdir(path=".")))
+with st.sidebar:
+    st.title(st.write("PATH : ",os.getcwd()),st.write("subdirectory : ",os.listdir(path=".")))
 
 #with st.sidebar:
 #    st.header(dir = st.text_input("change_dir"))
