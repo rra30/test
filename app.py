@@ -13,4 +13,7 @@ st.set_page_config(
     initial_sidebar_state="expanded")
 
 st.title("Fire/smoke-detection Project :fire:")
-source_model = st.sidebar.radio("Select Source",["Model Create","Model test"])
+source_model = st.sidebar.radio("Select Source",["Model_Create","Model_test"])
+
+if source_model == "Model_Create":
+    st.sidebar.radio("Choose Model type",["Load_Model","study_Model"])
