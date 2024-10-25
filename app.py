@@ -20,8 +20,8 @@ with st.sidebar:
                       os.getcwd()),
              st.write("subdirectory : ",os.listdir(path=".")))
 
-#with st.sidebar:
-#    st.header(dir = st.text_input("chdir"))
+with st.sidebar:
+    st.header(dir = st.text_input("chdir"))
 #    st.header(os.chdir == (dir))
     
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
