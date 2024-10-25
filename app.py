@@ -18,13 +18,12 @@ st.title("Test-Project-🌚")
 with st.sidebar:
     user_input = st.text_input("directory list",".")
     os.listdir(user_input)
-    os.listdir(".")
     st.title(st.write("PATH : ",
                       os.getcwd()),
              st.write("subdirectory : ",os.listdir(path=".")))
 
-#with st.sidebar:
-#    st.header(st.text_input("chdir"))
+with st.sidebar:
+    os.listdir(".")
 
     
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
