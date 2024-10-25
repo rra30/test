@@ -27,12 +27,12 @@ with st.sidebar:
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
-    test_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
+    check_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
 
 if source_model == "Model_Create":
     Study_model = st.sidebar.radio("Choose Model type",["Load_Model","study_Model"])
 
-if test_model == "Test_Image":
+if check_model == "Test_Image":
     st.sidebar.header("Imgae_Upload")
     input = st.sidebar.file_uploader("Choose an image.", type=("jpg","png"))
     
@@ -42,7 +42,7 @@ if test_model == "Test_Image":
         visualized_image = utils.predict_image(uploaded_image_cv, conf_threshold = conf_threshold)
         st.image(visualized_image, channels = "BGR")
 
-if test_model == "Test_Video":
+if check_model == "Test_Video":
     st.sidebar.header("Upload")
     input = st.sidebar.file_uploader("Choose an video.", type=("mp4"))
 
