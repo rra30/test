@@ -1,7 +1,7 @@
 import streamlit as st
 #import test
 import learn
-import def
+import defu
 import cv2
 import numpy as np
 import io
