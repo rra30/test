@@ -21,7 +21,7 @@ with st.sidebar:
              st.write("subdirectory : ",os.listdir(path=".")))
 
 with st.sidebar:
-    st.header(st.text_input("chdir"))
+#    st.header(st.text_input("chdir"))
     text_area_value = st.text_area("Enter multiple lines of text")
 #    st.header(os.chdir == (chdir))
     
