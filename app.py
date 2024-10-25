@@ -19,7 +19,7 @@ with st.sidebar:
     user_input = st.text_input("directory list")
     #os.chdir = (user_input)
     #st.write(user_input)
-    os.listdir(user_input)
+    #os.listdir(user_input)
     st.title(st.write("PATH : ",
                       os.getcwd()),
              st.write("subdirectory : ",os.listdir(path=".")))
