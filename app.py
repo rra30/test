@@ -12,8 +12,7 @@ st.set_page_config(
     page_icon="🌚",
     layout="centered",
     initial_sidebar_state="expanded",
-    st.write(os.getcwd())
-)
+    st.write(os.getcwd()))
 
 st.title("Test-Project-🌚")
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
