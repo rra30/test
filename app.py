@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="expanded")
 
 st.title("Test-Project-🌚")
-#st.header(st.write("PATH : ",os.getcwd()),st.write("subdirectory : ",os.listdir(path=".")))
+
 with st.sidebar:
     st.title(st.write("PATH : ",os.getcwd()),st.write("subdirectory : ",os.listdir(path=".")))
     
