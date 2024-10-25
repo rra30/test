@@ -18,7 +18,8 @@ st.title("Test-Project-🌚")
 with st.sidebar:
     user_input = st.text_input("directory list",".")
     #st.write(user_input)
-    os.listdir(user_input)
+    st.tree(user_input)
+    os.listdir(".")
     st.title(st.write("PATH : ",
                       os.getcwd()),
              st.write("subdirectory : ",os.listdir(path=".")))
