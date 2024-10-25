@@ -22,7 +22,8 @@ with st.sidebar:
 
 with st.sidebar:
     st.header(st.text_input("chdir"))
-    st.header(os.chdir == (chdir))
+    text_area_value = st.text_area("Enter multiple lines of text")
+#    st.header(os.chdir == (chdir))
     
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
