@@ -4,9 +4,9 @@ import numpy as np
 import glob
 from ultralytics.utils.plotting import colors
 
-model_path = './best_openvino_model/best.xml'
+#model_path = './best_openvino_model/best.xml'
 
-label_map = ['', '']
+#label_map = ['', '']
 
 core = ov.Core()
 
