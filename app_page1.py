@@ -8,7 +8,7 @@ import PIL
 import os
 from PIL import Image
 
-st.set_page_config(page_title="AI Demo", page_icon="📈")
+st.set_page_config(page_title="app_page1", page_icon="📈")
 st.sidebar.header("Plotting Demo")
 
 progress_bar = st.sidebar.progress(0)
