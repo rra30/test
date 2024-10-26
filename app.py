@@ -57,18 +57,21 @@ with st.sidebar:
         st.image(visualized_image, channels = "BGR")
 
 if source_model == "Test_Video":
-    st.sidebar.header("Upload")
-    input = st.sidebar.file_uploader("Choose an video.", type=("mp4"))
+    try:
+        st.sidebar.header("Upload")
+        input = st.sidebar.file_uploader("Choose an video.", type=("mp4"))
 
-    if input is not None:
-        g = io.BytesIO(input.read())
-        temporary_location = "upload.mp4"
+        if input is not None:
+            g = io.BytesIO(input.read())
+            temporary_location = "upload.mp4"
 
-        with open(temporary_location, "wb") as out:
-            out.write(g.read())
+            with open(temporary_location, "wb") as out:
+                out.write(g.read())
 
-        out.close()
-    if temporary_location is not None:
-        play_video(temporary_location)
-        if st.button("Replay", type="primary"):
-            pass
+            out.close()
+        if temporary_location is not None:
+            play_video(temporary_location)
+            if st.button("Replay", type="primary"):
+                pass
+    except:
+        pass
