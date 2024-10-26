@@ -16,12 +16,10 @@ st.set_page_config(
 
 st.title("Test-Project-🌚")
 
-
-
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
+model_path = st.siderbar.header(st.text_input("model path : ","."))
 
 if source_model == "Model_test":
-    model_path = st.siderbar.header(st.text_input("model path : ","."))
     source_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
     
 if source_model == "Model_Create":
