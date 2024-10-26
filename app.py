@@ -16,17 +16,18 @@ st.set_page_config(
 
 st.title("Test-Project-🌚")
 
-with st.sidebar:
-    model_path = st.text_input("model path : ",".")
+
 
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
+    with st.sidebar:
+        model_path = st.text_input("model path : ",".")
     source_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
-
+    
 if source_model == "Model_Create":
-    source_model = st.sidebar.radio("Choose Model type",["Load_Model","source_model"])
-
+    # 추가
+    
 if source_model == "Test_Image":
     st.sidebar.header("Imgae_Upload")
     input = st.sidebar.file_uploader("Choose an image.", type=("jpg","png"))
