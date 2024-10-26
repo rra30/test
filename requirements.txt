@@ -6,3 +6,4 @@ ultralytics
 opencv-python-headless==4.10.0.84
 streamlit-camera-input-live==0.2.0
 tensorflow==2.16.1
+roboflow
