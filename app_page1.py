@@ -9,6 +9,7 @@ import os
 from PIL import Image
 
 st.set_page_config(page_title="AI Demo", page_icon="📈")
+st.sidebar.header("Plotting Demo")
 
 st.set_page_config(
     page_title="test",
