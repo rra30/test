@@ -40,13 +40,24 @@ def list_files(startpath):
     return tree_structure
 
 with st.sidebar:
-    st.title(st.write("PATH : ",os.getcwd())
+    selected = st.radio( 'Check_Path' , ['normal','tree'] )
+    if selected == "normal":
+        st.title(st.write("PATH : ",os.getcwd())
+             #,st.write("subdirectory : ",os.listdir(path="."))
+                )
+    if selected == "tree":
+            user_input = st.text_input("directory list",".")
+            tree = list_files(user_input)
+            st.text(tree)
+            
+    
+    #st.title(st.write("PATH : ",os.getcwd())
              #,st.write("subdirectory : ",os.listdir(path="."))
             )
-    user_input = st.text_input("directory list",".")
+    #user_input = st.text_input("directory list",".")
     #os.listdir(user_input)
-    tree = list_files(user_input)
-    st.text(tree)
+    #tree = list_files(user_input)
+    #st.text(tree)
     #st.text("test")
 
 with st.sidebar:
