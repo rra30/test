@@ -43,7 +43,7 @@ with st.sidebar:
     selected = st.radio( 'Check_Path' , ['normal','tree'] )
     if selected == "normal":
         st.title(st.write("PATH : ",os.getcwd())
-             #,st.write("subdirectory : ",os.listdir(path="."))
+                 ,st.write("subdirectory : ",os.listdir(path="."))
                 )
     if selected == "tree":
             user_input = st.text_input("directory list",".")
