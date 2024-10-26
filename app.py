@@ -17,6 +17,18 @@ st.set_page_config(
 
 st.title("Test-Project-🌚")
 
+source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
+
+if source_model == "Model_test":
+    source_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
+
+if source_model == "Model_Create":
+    source_model = st.sidebar.radio("Choose Model type",["Load_Model","source_model"])
+
+if source_model == "Test_Image":
+    st.sidebar.header("Imgae_Upload")
+    input = st.sidebar.file_uploader("Choose an image.", type=("jpg","png"))
+
 def list_files(startpath):
     tree_structure = ""
     for root, dirs, files in os.walk(startpath):
@@ -41,18 +53,6 @@ with st.sidebar:
 with st.sidebar:
     os.listdir(".")
 
-    
-source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
-
-if source_model == "Model_test":
-    source_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
-
-if source_model == "Model_Create":
-    source_model = st.sidebar.radio("Choose Model type",["Load_Model","source_model"])
-
-if source_model == "Test_Image":
-    st.sidebar.header("Imgae_Upload")
-    input = st.sidebar.file_uploader("Choose an image.", type=("jpg","png"))
     
     if input is not None:
         uploaded_image = PIL.Image.open(input)
