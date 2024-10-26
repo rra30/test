@@ -1,11 +1,4 @@
 import streamlit as st
-import openvino
-import numpy
-import moviepy
-import ultralytics
-import opencv-python-headless
-import tensorflow
-import roboflow
 #import test
 #import learn
 import cv2
