@@ -8,6 +8,8 @@ import PIL
 import os
 from PIL import Image
 
+st.set_page_config(page_title="AI Demo", page_icon="📈")
+
 st.set_page_config(
     page_title="test",
     page_icon="🌚",
