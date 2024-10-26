@@ -1,10 +1,10 @@
 import streamlit as st
 import openvino
-import numpy==1.26.4
-import moviepy==1.0.3
+import numpy
+import moviepy
 import ultralytics
-import opencv-python-headless==4.10.0.84
-import tensorflow==2.16.1
+import opencv-python-headless
+import tensorflow
 import roboflow
 #import test
 #import learn
