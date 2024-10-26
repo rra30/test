@@ -49,21 +49,7 @@ with st.sidebar:
             user_input = st.text_input("directory list",".")
             tree = list_files(user_input)
             st.text(tree)
-            
-    
-    #st.title(st.write("PATH : ",os.getcwd())
-             #,st.write("subdirectory : ",os.listdir(path="."))
-            #)
-    #user_input = st.text_input("directory list",".")
-    #os.listdir(user_input)
-    #tree = list_files(user_input)
-    #st.text(tree)
-    #st.text("test")
 
-with st.sidebar:
-    os.listdir(".")
-
-    
     if input is not None:
         uploaded_image = PIL.Image.open(input)
         uploaded_image_cv =cv2.cvtColor(np.array(uploaded_image), cv2.COLOR_RGB2BGR)
