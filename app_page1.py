@@ -11,11 +11,22 @@ from PIL import Image
 st.set_page_config(page_title="AI Demo", page_icon="📈")
 st.sidebar.header("Plotting Demo")
 
+progress_bar = st.sidebar.progress(0)
+status_text = st.sidebar.empty()
+last_rows = np.random.randn(1, 1)
+chart = st.line_chart(last_rows)
+
+
+
 st.set_page_config(
     page_title="test",
     page_icon="🌚",
     layout="centered",
     initial_sidebar_state="expanded")
+
+progress_bar.empty()
+
+st.button("Re-run")
 
 st.title("Test-Project-🌚")
 
