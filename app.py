@@ -1,7 +1,6 @@
 import streamlit as st
 #import test
 import learn
-import defu
 import cv2
 import numpy as np
 import io
@@ -41,7 +40,8 @@ def list_files(startpath):
     return tree_structure
 
 with st.sidebar:
-    st.title(st.write("PATH : ",os.getcwd()),st.write("subdirectory : ",os.listdir(path=".")))
+    st.title(st.write("PATH : ",os.getcwd()),
+             st.write("subdirectory : ",os.listdir(path=".")))
     user_input = st.text_input("directory list",".")
     #os.listdir(user_input)
     tree = list_files(user_input)
