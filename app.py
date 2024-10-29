@@ -26,7 +26,7 @@ if source_model == "Model_test":
     model_path = st.siderbar.header(st.text_input("model path : ","."))
     source_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
 
-if source_model == "Model_Create":
+#if source_model == "Model_Create":
     # 추가
 
 if source_model == "Test_Image":
