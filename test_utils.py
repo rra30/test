@@ -5,6 +5,7 @@ import glob
 from ultralytics.utils.plotting import colors
 
 #model_path = './best_openvino_model/best.xml' #/mount/src/ai_fire_safety_project
+#label_map = ['fire', 'smoke']
 
 core = ov.Core()
 
@@ -13,8 +14,6 @@ compiled_model = core.compile_model(model=model, device_name="CPU")
 
 input_layer = compiled_model.input(0)
 output_layer = compiled_model.output(0)
-
-#label_map = ['fire', 'smoke']
 
 def prepare_data(image, input_layer):
 
