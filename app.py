@@ -35,9 +35,9 @@ if source_model == "Model_test":
         except:
             pass
         model_path = st.text_input("model path : ","./")
-        st.write(model_path)
+        st.write("model_path : ",model_path)
         label_map = st.text_input("model label : ","")
-        st.write(label_map)
+        st.write("label_map : ",label_map)
     #model_path = st.siderbar.header(st.text_input("model path : ","."))
     source_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
 
