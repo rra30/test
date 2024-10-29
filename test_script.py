@@ -8,7 +8,7 @@ from ultralytics.utils.plotting import colors
 #model_path = './best_openvino_model/best.xml'
 
 #label_map = ['', '']
-if model_path != "./" or model path != "" and label_map != "":
+if model_path != "./" or model_path != "" and label_map != "":
     core = ov.Core()
 
     model = core.read_model(model=model_path)
