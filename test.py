@@ -2,6 +2,7 @@ import openvino as ov
 import cv2
 import numpy as np
 import glob
+import app
 from ultralytics.utils.plotting import colors
 
 #model_path = './best_openvino_model/best.xml'
