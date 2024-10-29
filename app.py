@@ -27,6 +27,11 @@ except:
 if source_model == "Model_test":
     with st.sidebar:
         st.sidebar.file_uploader("Upload Model", type=("xml","bin"))
+        model_dir_set = "../model"
+        model_path_set = os.path.join(model_dir_set, uploaded_file.name)
+        with open(model_path_set, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+        
         model_path = st.text_input("model path : ","./")
         st.write(model_path)
         label_map = st.text_input("model label : ","")
