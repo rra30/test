@@ -18,7 +18,10 @@ st.title("Test-Project-🌚")
 label_map = ['', '']
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
-os.mkdir("model")
+try:
+    os.mkdir("model")
+except:
+    pass
 
 if source_model == "Model_test":
     with st.sidebar:
