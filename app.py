@@ -18,6 +18,8 @@ st.title("Test-Project-🌚")
 label_map = ['', '']
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
+os.mkdir("model")
+
 if source_model == "Model_test":
     with st.sidebar:
         st.sidebar.file_uploader("Upload Model", type=(""))
