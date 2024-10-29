@@ -7,6 +7,7 @@ import io
 import PIL
 import os
 import glob
+from utils import predict_image
 from PIL import Image
 
 st.set_page_config(
