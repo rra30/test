@@ -22,7 +22,7 @@ os.mkdir("model")
 
 if source_model == "Model_test":
     with st.sidebar:
-        st.sidebar.file_uploader("Upload Model", type=(""))
+        st.sidebar.file_uploader("Upload Model", type=("xml","bin"))
         model_path = st.text_input("model path : ","./")
         st.write(model_path)
         label_map = st.text_input("model label : ","")
