@@ -156,5 +156,4 @@ try:
             visualize(nms_output, boxes, OV_image, label_names, scores, input_layer)
 
         return OV_image
-except:
-    pass
+
