@@ -16,9 +16,9 @@ st.set_page_config(
     initial_sidebar_state="expanded")
 
 st.title("Test-Project-🌚")
-label_map = ['', '']
-source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
+source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
+label_map = ['', '']
 try:
     os.mkdir("model")
 except:
