@@ -16,8 +16,6 @@ st.set_page_config(
 
 st.title("Test-Project-🌚")
 
-
-
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
