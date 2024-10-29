@@ -156,4 +156,3 @@ if model_path != "./" or model_path != "" and label_map != "":
             visualize(nms_output, boxes, OV_image, label_names, scores, input_layer)
 
         return OV_image
-
