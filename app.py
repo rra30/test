@@ -26,7 +26,6 @@ except:
 
 if source_model == "Model_test":
     with st.sidebar:
-        st.write("Utils module path:", utils.__file__)
         try:
             uploaded_file = st.sidebar.file_uploader("Upload Model", type=("xml","bin"))
             model_dir_set = "./model"
