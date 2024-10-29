@@ -146,7 +146,6 @@ if model_path != "./" or model_path != "" and label_map != []:
             return orig_image
 
         def predict_image(img, conf_threshold):
-
             # ----- OpenVino ----- #
             OV_image = img.copy()
             input_image =prepare_data(OV_image, input_layer)
