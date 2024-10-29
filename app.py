@@ -19,7 +19,7 @@ st.set_page_config(
 st.title("Test-Project-🌚")
 
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
-label_map = ['', '']
+label_map = []
 
 try:
     os.mkdir("model")
