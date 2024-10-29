@@ -15,12 +15,13 @@ st.set_page_config(
     initial_sidebar_state="expanded")
 
 st.title("Test-Project-🌚")
-
+label_map = ['', '']
 source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
     with st.sidebar:
         model_path = st.text_input("model path : ",".")
+        label_map = st.text_input("model label : ",".")
     #model_path = st.siderbar.header(st.text_input("model path : ","."))
     source_model = st.sidebar.radio("Choose Model type",["Test_Image","Test_Video"])
 
