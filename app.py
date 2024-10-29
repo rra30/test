@@ -26,7 +26,7 @@ except:
 
 if source_model == "Model_test":
     with st.sidebar:
-        st.sidebar.file_uploader("Upload Model", type=("xml","bin"))
+        uploaded_file = st.sidebar.file_uploader("Upload Model", type=("xml","bin"))
         model_dir_set = "../model"
         model_path_set = os.path.join(model_dir_set, uploaded_file.name)
         with open(model_path_set, "wb") as f:
