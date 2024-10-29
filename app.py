@@ -8,6 +8,7 @@ import PIL
 import os
 import glob
 from PIL import Image
+from utils import predict_image
 
 st.set_page_config(
     page_title="test",
