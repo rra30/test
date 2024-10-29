@@ -20,7 +20,7 @@ source_model = st.sidebar.radio("Select Model",["Model_Create","Model_test"])
 
 if source_model == "Model_test":
     with st.sidebar:
-        model_path = st.text_input("model path : ","./")
+        model_path.append = st.text_input("model path : ","./")
         st.write(model_path)
         label_map = st.text_input("model label : ","")
         st.write(label_map)
