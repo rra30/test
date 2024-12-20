@@ -4,20 +4,6 @@ import cv2
 import os
 import shutil
 
-def play_video(video_source):
-    camera = cv2.VideoCapture(video_source)
-
-    st_frame = st.empty()
-    while(camera.isOpened()):
-        ret, frame = camera.read()
-
-        if ret:
-            visualized_image = utils.predict_image(frame, conf_threshold)
-            st_frame.image(visualized_image, channels = "BGR")
-        else:
-            camera.release()
-            break
-
 st.set_page_config(
     page_title="Fire/smoke-detection",
     page_icon="🔥",
