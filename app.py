@@ -15,4 +15,4 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded")
 
-st.title("Fire/smoke-detection Project :fire:")
+st.title("Ai name project ✋")
