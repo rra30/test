@@ -1,5 +1,6 @@
 streamlit
 openvino
+openvino-dev
 numpy==1.26.4
 moviepy==1.0.3
 ultralytics
