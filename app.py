@@ -10,8 +10,8 @@ from PIL import Image
 #import utils
 
 st.set_page_config(
-    page_title="Fire/smoke-detection",
-    page_icon="🔥",
+    page_title="Ai name",
+    page_icon="✋",
     layout="centered",
     initial_sidebar_state="expanded")
 
