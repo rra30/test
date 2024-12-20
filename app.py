@@ -5,8 +5,8 @@ import cv2
 import io
 import PIL
 from PIL import Image
-import os
-import shutil
+#import os
+#import shutil
 #import utils
 
 st.set_page_config(
