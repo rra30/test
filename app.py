@@ -19,7 +19,7 @@ st.set_page_config(
 st.title("Welcome to 'I want go home' ✋")
 st.sidebar.header("Setting")
 
-if csv_name == None or csv_name == "":
+if (csv_name == None or csv_name == ""):
     source_model = st.sidebar.radio("The data is not available.",["Data Collection"])
 else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
