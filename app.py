@@ -55,8 +55,8 @@ def WebCam():
             source = 0
             if __name__ == '__main__':
                 Main()
-          except NameError or error:
-              pass
+        except NameError or error:
+            pass
 
 if (csv_name == None or csv_name == ""):
     csv_name = now.strftime('20%y_%m_%d_%H_%M_%S')
