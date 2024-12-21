@@ -44,7 +44,7 @@ if (csv_directory == False):
         #time.sleep(5)
         try:
             import Collection
-            Col_start()
+            Main()
         except:
             pass
 else:
@@ -53,13 +53,13 @@ else:
     if (source_model == "Utilize collected data"):
         try:
             import utils
-            normal_start()
+            Main()
         except:
             pass
 
     elif (source_model == "Data Collection"):
         try:
             import Collection
-            Col_start()
+            Main()
         except:
             pass
