@@ -87,6 +87,10 @@ def Main():
             # 카메라에서 이미지를 읽어옴
             frame = np.array(cv2.imdecode(np.frombuffer(video_file.read(), np.uint8), 1))
 
+            if frame is None:
+                st.warning("No image captured. Please try again.")
+                return
+
             # 얼굴 탐지를 위해 프레임을 전처리하고 모델에 전달
             input_frame = preprocess(frame, input_layer_face)
             if input_frame is None:
