@@ -47,6 +47,12 @@ if (csv_directory == False):
             Main()
         except:
             pass
+    else:
+        try:
+            import utils
+            Main()
+        except:
+            pass
 else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
 
