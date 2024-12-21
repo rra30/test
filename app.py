@@ -11,7 +11,7 @@ import time
 import datetime as dt
 import Collection
 
-csv_directory = False
+csv_directory = './model/model/2024_12_21_12_38_19.csv'
 
 directory = os.listdir()
 
@@ -20,7 +20,7 @@ for filename in directory:
         csv_directory = True
         csv_name = filename
 
-csv_name = ""
+csv_name = "2024_12_21_12_38_19.csv"
 
 now = dt.datetime.now()
 
