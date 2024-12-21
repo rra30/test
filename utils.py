@@ -84,7 +84,6 @@ def Main():
     cv2.destroyAllWindows()
   except NameError or error:
     pass
-def normal_start():
   try:
     confidence_threshold = .2
     source = 0
