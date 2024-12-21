@@ -10,3 +10,6 @@ import datetime as dt
 a = True
 total_data = []
 csv_name = None
+
+if (csv_name == None or csv_name == ""):
+    csv_name = now.strftime('20%y_%m_%d_%H_%M_%S')
