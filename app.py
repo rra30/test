@@ -7,6 +7,7 @@ import PIL
 from PIL import Image
 import os
 import utils
+import time
 import datetime as dt
 
 csv_directory = False
@@ -38,7 +39,8 @@ for i in range(len(os.listdir())):
 
 if (csv_directory == False):
     source_model = st.sidebar.radio("The data is not available.",["Data Collection"])
-    if source_model == "Data Collection"
+    if source_model == "Data Collection":
+        time.sleep(5)
 else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
     
