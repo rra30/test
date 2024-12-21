@@ -88,10 +88,11 @@ def Main():
     cv2.destroyAllWindows()
   except NameError or error:
     pass
-try:
-  confidence_threshold = .2
-  source = 0
-  if __name__ == '__main__':
-    Main()
-except NameError or error:
-  pass
+def Col_start
+  try:
+    confidence_threshold = .2
+    source = 0
+    if __name__ == '__main__':
+      Main()
+  except NameError or error:
+    pass
