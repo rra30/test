@@ -10,6 +10,12 @@ import utils
 #import shutil
 #import utils
 
+csv_name = ""
+
+now = dt.datetime.now()
+
+if (csv_name == None or csv_name == ""):
+    csv_name = now.strftime('20%y_%m_%d_%H_%M_%S')
 st.set_page_config(
     page_title="I want go to home",
     page_icon="✋",
