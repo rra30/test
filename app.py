@@ -36,8 +36,6 @@ st.set_page_config(
 st.title("Welcome to '살자 예방 게이트 키퍼' ✋")
 st.sidebar.header("Setting")
 
-#for i in range(len(os.listdir())):
-
 if (csv_directory == False):
     source_model = st.sidebar.radio("The data is not available. But You can use basic csv file",["Data Collection","Utilize collected data"])
     if source_model == "Data Collection":
@@ -65,7 +63,7 @@ else:
             Main()
         except:
             pass
-
+            
     elif (source_model == "Data Collection"):
         st.sidebar.header("Output")
         st.sidebar.radio("Choose",["WebCam","Video"])
