@@ -66,4 +66,4 @@ if source_radio == "VIDEO":
 
 
 if source_radio == "WEBCAM":
-    play_live_camera()
+    play_video(0)
