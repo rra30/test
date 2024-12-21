@@ -51,11 +51,12 @@ else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
 
     if (source_model == "Utilize collected data"):
-        try:
-            import utils
-            Main()
-        except:
-            pass
+        st.sidebar.header("Setting")
+            try:
+                import utils
+                Main()
+            except:
+                pass
 
     elif (source_model == "Data Collection"):
         try:
