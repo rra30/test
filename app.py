@@ -9,7 +9,7 @@ import os
 import utils
 import time
 import datetime as dt
-import 
+import Collection
 
 csv_directory = False
 
