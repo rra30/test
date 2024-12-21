@@ -8,8 +8,6 @@ from PIL import Image
 import os
 import utils
 import datetime as dt
-#import shutil
-#import utils
 
 csv_name = ""
 
@@ -17,6 +15,7 @@ now = dt.datetime.now()
 
 if (csv_name == None or csv_name == ""):
     csv_name = now.strftime('20%y_%m_%d_%H_%M_%S')
+    
 st.set_page_config(
     page_title="I want go to home",
     page_icon="✋",
@@ -26,7 +25,10 @@ st.set_page_config(
 st.title("Welcome to 'I want go home' ✋")
 st.sidebar.header("Setting")
 
-if (csv_name == ""):
+for i in range(len(os.listdir())):
+        
+
+if ():
     source_model = st.sidebar.radio("The data is not available.",["Data Collection"])
 else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
