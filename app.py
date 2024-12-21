@@ -33,34 +33,46 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded")
 
-st.title("Welcome to '살자 예방 게이트 키퍼' ✋")
+st.title("Welcome to 'Helpe'! ✋")
 st.sidebar.header("Setting")
 
 if (csv_directory == False):
     source_model = st.sidebar.radio("The data is not available. But You can use basic csv file",["Data Collection","Utilize collected data"])
     if source_model == "Data Collection":
         st.sidebar.header("Output")
-        st.sidebar.radio("Choose",["WebCam","Video"])
+        sou_Fal_Col_radio = st.sidebar.radio("Choose",["WebCam","Video"])
         try:
-            import Collection
-            Main()
+            if (sou_Fal_Col_radio == "WebCam"):
+                WebCam()
+            else:
+                Video()
         except:
             pass
     else:
-        try:
-            import utils
-            Main()
-        except:
-            pass
+        st.sidebar("Output")
+        sou_Fal_Uti_radio = st.sidebar.radio("Choose",["WebCam","Video","Image"])
+            try:
+                if (source_radio == "WebCam"):
+                    WebCam()
+                elif (source_radio == "Video"):
+                    Video()
+                else:
+                    Image()
+            except:
+                pass
 else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
 
     if (source_model == "Utilize collected data"):
         st.sidebar.header("Output")
-        st.sidebar.radio("Choose",["WebCam","Video","Image"])
+        sou_True_Uti_radio = st.sidebar.radio("Choose",["WebCam","Video","Image"])
         try:
-            import utils
-            Main()
+            if (sou_True_Uti_radio):
+                WebCam()
+            elif (sou_True_Uti_radio):
+                Video()
+            else:
+                Image()
         except:
             pass
             
