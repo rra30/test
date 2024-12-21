@@ -9,6 +9,7 @@ import os
 import utils
 import time
 import datetime as dt
+import 
 
 csv_directory = False
 
@@ -36,7 +37,6 @@ st.title("Welcome to '자살 예방 게이트 키퍼' ✋")
 st.sidebar.header("Setting")
 
 #for i in range(len(os.listdir())):
-
 
 if (csv_directory == False):
     source_model = st.sidebar.radio("The data is not available.",["Data Collection"])
