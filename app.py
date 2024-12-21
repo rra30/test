@@ -39,11 +39,11 @@ st.sidebar.header("Setting")
 #for i in range(len(os.listdir())):
 
 if (csv_directory == False):
-    source_model = st.sidebar.radio("The data is not available.",["Data Collection"])
+    source_model = st.sidebar.radio("The data is not available. But You can use basic csv file",["Data Collection","Utilize collected data"])
     if source_model == "Data Collection":
         #time.sleep(5)
         try:
-            Data_Collection()
+            a
         except:
             pass
 else:
