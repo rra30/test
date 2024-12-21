@@ -24,96 +24,12 @@ def Data_Collection():
                     compiled_model_face = core.compile_model(model = model_face, device_name="CPU")
                     input_layer_face = compiled_model_face.input(0)
                     output_layer_face = compiled_model_face.output(0)
-                except RuntimeError:
-                    !omz_downloader --name face-detection-adas-0001 --precision FP16
-                    model = "face-detection-adas-0001"
-                    default_directory = os.getcwd()
-                    try:
-                        try:
-                            shutil.rmtree("model")
-                        except:
-                            pass
-                        os.mkdir('model')
-                    except Exception:
-                        pass 
-                    os.chdir("model")
-                    model_directory = os.getcwd()
-                    os.chdir(default_directory)
-                    list_int = os.listdir(path=".")
-                    text_length_int = len(os.listdir(path="."))
-                    os.chdir(default_directory)
-                    try:
-                        for i in range (text_length_int):
-                            if (list_int[i] == "intel"):
-                                os.chdir("intel")
-                                path_int = os.getcwd()
-                        list_int = os.listdir(path=".")
-                        text_length_int = len(os.listdir(path="."))
-                        for i in range (text_length_int):
-                            if (list_int[i] == model):
-                                os.chdir(model)
-                                path_fac = os.getcwd()
-                        list_fac = os.listdir(path=".")
-                        text_length_fac = len(os.listdir(path="."))
-                        for i in range (text_length_fac):
-                            if (list_fac[i] == "FP16"):
-                                os.chdir("FP16")
-                                path_fac_FP = os.getcwd()
-                        list_fac_mod = os.listdir(path=".")
-                        text_length_fac_mod = len(os.listdir(path="."))
-                        shutil.move(model+'.bin',model_directory)
-                        shutil.move(model+'.xml',model_directory)
-                        os.chdir(default_directory)
-                    except:
-                        pass
-    
-                try:
                     model_emo = core.read_model(model='model/emotions-recognition-retail-0003.xml')
                     compiled_model_emo = core.compile_model(model = model_emo, device_name="CPU")
                     input_layer_emo = compiled_model_emo.input(0)
                     output_layer_emo = compiled_model_emo.output(0)
-                except RuntimeError:
-                    !omz_downloader --name emotions-recognition-retail-0003 --precision FP16
-                    model = "emotions-recognition-retail-0003"
-                    default_directory = os.getcwd()
-                    try:
-                        try:
-                            shutil.rmtree("model")
-                        except:
-                            pass
-                        os.mkdir('model')
-                    except Exception:
-                        pass 
-                    os.chdir("model")
-                    model_directory = os.getcwd()
-                    os.chdir(default_directory)
-                    list_int = os.listdir(path=".")
-                    text_length_int = len(os.listdir(path="."))
-                    os.chdir(default_directory)
-                    try:
-                        for i in range (text_length_int):
-                            if (list_int[i] == "intel"):
-                                os.chdir("intel")
-                                path_int = os.getcwd()
-                        list_int = os.listdir(path=".")
-                        text_length_int = len(os.listdir(path="."))
-                        for i in range (text_length_int):
-                            if (list_int[i] == model):
-                                os.chdir(model)
-                                path_fac = os.getcwd()
-                        list_fac = os.listdir(path=".")
-                        text_length_fac = len(os.listdir(path="."))
-                        for i in range (text_length_fac):
-                            if (list_fac[i] == "FP16"):
-                                os.chdir("FP16")
-                                path_fac_FP = os.getcwd()
-                        list_fac_mod = os.listdir(path=".")
-                        text_length_fac_mod = len(os.listdir(path="."))
-                        shutil.move(model+'.bin',model_directory)
-                        shutil.move(model+'.xml',model_directory)
-                        os.chdir(default_directory)
-                    except:
-                        pass
+                except:
+                    pass
             except:
                 pass
             def preprocess(frame, input_layer_face):
