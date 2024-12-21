@@ -6,10 +6,10 @@ import io
 import PIL
 from PIL import Image
 import os
-import utils
+#import utils
 import time
 import datetime as dt
-import Collection
+#import Collection
 
 csv_directory = './model/model/2024_12_21_12_38_19.csv'
 
@@ -43,6 +43,7 @@ if (csv_directory == False):
     if source_model == "Data Collection":
         #time.sleep(5)
         try:
+            import Collection
             Col_start()
         except:
             pass
@@ -51,26 +52,14 @@ else:
 
     if (source_model == "Utilize collected data"):
         try:
+            import utils
             normal_start()
-            def play_video(video_source):
-                camera = cv2.VideoCapture(video_source)
-
-                st_frame = st.empty()
-                while(camera.isOpened()):
-                    ret, frame = camera.read()
-
-                    if ret:
-                        visualized_image = utils.predict_image(frame, conf_threshold)
-                        st_frame.image(visualized_image, channels = "BGR")
-                    else:
-                        camera.release()
-                        break
-            play_video()
         except:
             pass
 
     elif (source_model == "Data Collection"):
         try:
+            import Collection
             Col_start()
         except:
             pass
