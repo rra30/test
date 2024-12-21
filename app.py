@@ -33,29 +33,29 @@ def WebCam():
         try:
             camera = cv2.VideoCapture(source)
             while(True):
-            ret, frame = camera.read()
-            if not ret:
-                a = True
-                break
-          input_frame = preprocess(frame, input_layer_face)
-          results = compiled_model_face([input_frame])[output_layer_face]
-          face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)
-          show_frame = draw_emotion(face_boxes, frame, scores)
-          cv2.imshow("Webcam", show_frame)
-          if cv2.waitKey(1) & 0xff == ord('q'):
-            a = False
-            raise Breaking
-        camera.release()
-        cv2.destroyAllWindows()
-      except NameError or error:
-        pass
-      try:
-        confidence_threshold = .2
-        source = 0
-        if __name__ == '__main__':
-            Main()
-      except NameError or error:
-        pass
+                ret, frame = camera.read()
+                if not ret:
+                    a = True
+                    break
+              input_frame = preprocess(frame, input_layer_face)
+              results = compiled_model_face([input_frame])[output_layer_face]
+              face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)    
+              show_frame = draw_emotion(face_boxes, frame, scores)
+              cv2.imshow("Webcam", show_frame)
+              if cv2.waitKey(1) & 0xff == ord('q'):
+                  a = False
+                  raise Breaking
+            camera.release()
+            cv2.destroyAllWindows()
+        except NameError or error:
+            pass
+        try:
+            confidence_threshold = .2
+            source = 0
+            if __name__ == '__main__':
+                Main()
+          except NameError or error:
+              pass
 
 if (csv_name == None or csv_name == ""):
     csv_name = now.strftime('20%y_%m_%d_%H_%M_%S')
