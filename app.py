@@ -42,7 +42,10 @@ if (csv_directory == False):
     source_model = st.sidebar.radio("The data is not available.",["Data Collection"])
     if source_model == "Data Collection":
         #time.sleep(5)
-        Data_Collection()
+        try:
+            Data_Collection()
+        except:
+            pass
 else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
 
