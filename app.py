@@ -10,10 +10,10 @@ from PIL import Image
 #import utils
 
 st.set_page_config(
-    page_title="Ai name",
+    page_title="I want go to home",
     page_icon="✋",
     layout="centered",
     initial_sidebar_state="expanded")
 
-st.title("Ai name project ✋")
+st.title("Welcome to 'I want go home' ✋")
 st.sidebar.header("Setting")
