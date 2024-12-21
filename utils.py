@@ -65,29 +65,18 @@ def draw_emotion(face_boxes, frame, scores):
   except NameError or error:
     pass
 def Main():
-  try:
-    camera = cv2.VideoCapture(0)
-    while(True):
-      ret, frame = camera.read()
-      if not ret:
-        a = True
-        break
-      input_frame = preprocess(frame, input_layer_face)
-      results = compiled_model_face([input_frame])[output_layer_face]
-      face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)
-      show_frame = draw_emotion(face_boxes, frame, scores)
-      cv2.imshow("Webcam", show_frame)
-      if cv2.waitKey(1) & 0xff == ord('q'):
-        a = False
-        raise Breaking
-    camera.release()
-    cv2.destroyAllWindows()
-  except NameError or error:
-    pass
-  try:
-    confidence_threshold = .2
-    #source = 0
-    if __name__ == '__main__':
-      Main()
-  except NameError or error:
-    pass
+    try:
+        confidence_threshold = 0.2
+        video_file = st.camera_input("Take a picture")
+        if video_file:
+            frame = np.array(cv2.imdecode(np.frombuffer(video_file.read(), np.uint8), 1))
+            input_frame = preprocess(frame, input_layer_face)
+            results = None 
+            face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)
+            show_frame = draw_emotion(face_boxes, frame, scores)
+            st.image(show_frame) 
+    except Exception as e:
+        st.error(f"Error: {e}")
+
+if __name__ == '__main__':
+    Main()
