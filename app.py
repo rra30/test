@@ -1,13 +1,10 @@
-import streamlit as st
+import csv
+import os
 import numpy as np
 import openvino as ov
 import cv2
-import io
-import PIL
-from PIL import Image
-import os
-import time
 import datetime as dt
+import streamlit as st
 
 csv_directory = './model/model/2024_12_21_12_38_19.csv'
 
