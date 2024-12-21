@@ -60,4 +60,4 @@ else:
             import Collection
             Main()
         except:
-            pas
+            pass
