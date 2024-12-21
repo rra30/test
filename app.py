@@ -6,10 +6,8 @@ import io
 import PIL
 from PIL import Image
 import os
-#import utils
 import time
 import datetime as dt
-#import Collection
 
 csv_directory = './model/model/2024_12_21_12_38_19.csv'
 
