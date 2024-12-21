@@ -66,7 +66,7 @@ def draw_emotion(face_boxes, frame, scores):
     pass
 def Main():
   try:
-    camera = cv2.VideoCapture(source)
+    camera = cv2.VideoCapture(0)
     while(True):
       ret, frame = camera.read()
       if not ret:
@@ -86,7 +86,7 @@ def Main():
     pass
   try:
     confidence_threshold = .2
-    source = 0
+    #source = 0
     if __name__ == '__main__':
       Main()
   except NameError or error:
