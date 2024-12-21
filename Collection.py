@@ -22,7 +22,7 @@ try:
   output_layer_emo = compiled_model_emo.output(0)
 except:
   pass
-def Col_preprocess(frame, input_layer_face):
+def preprocess(frame, input_layer_face):
   try:
     N, input_channels, input_height, input_width = input_layer_face.shape
     resized_frame = cv2.resize(frame, (input_width, input_height))
@@ -31,7 +31,7 @@ def Col_preprocess(frame, input_layer_face):
     return input_frame
   except NameError or error:
      pass
-def Col_find_faceboxes(frame, results, confidence_threshold):
+def find_faceboxes(frame, results, confidence_threshold):
   try:
     results = results.squeeze()
     scores = results[:,2]
@@ -44,14 +44,14 @@ def Col_find_faceboxes(frame, results, confidence_threshold):
     return face_boxes, scores
   except NameError or error:
     pass
-def Col_draw_emotion(face_boxes, frame, scores):
+def draw_emotion(face_boxes, frame, scores):
   try:
     show_frame = frame.copy()
     EMOTION_NAMES = ['neutral', 'happy', 'sad', 'surprise', 'anger']
     for i in range(len(face_boxes)):
       xmin, ymin, xmax, ymax = face_boxes[i]
       face = frame[ymin:ymax, xmin:xmax]
-      input_frame = Col_preprocess(face, input_layer_emo)
+      input_frame = preprocess(face, input_layer_emo)
       results_emo = compiled_model_emo([input_frame])[output_layer_emo]
       results_emo = results_emo.squeeze()
       index = np.argmax(results_emo)
@@ -76,10 +76,10 @@ def Main():
       if not ret:
         a = True
         break
-      input_frame = Col_preprocess(frame, input_layer_face)
+      input_frame = preprocess(frame, input_layer_face)
       results = compiled_model_face([input_frame])[output_layer_face]
-      face_boxes, scores = Col_find_faceboxes(frame, results, confidence_threshold)
-      show_frame = Col_draw_emotion(face_boxes, frame, scores)
+      face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)
+      show_frame = draw_emotion(face_boxes, frame, scores)
       cv2.imshow("Webcam", show_frame)
       if cv2.waitKey(1) & 0xff == ord('q'):
         a = False
@@ -88,7 +88,6 @@ def Main():
     cv2.destroyAllWindows()
   except NameError or error:
     pass
-def Col_start():
   try:
     confidence_threshold = .2
     source = 0
