@@ -61,10 +61,6 @@ def draw_emotion(face_boxes, frame, scores):
       fontScale = frame.shape[1]/1000
       cv2.putText(show_frame, text, (xmin, ymin), cv2.FONT_HERSHEY_SIMPLEX, fontScale, (0, 200, 0), 2)
       cv2.rectangle(img=show_frame, pt1=(xmin,ymin), pt2=(xmax,ymax), color=box_color, thickness=2)
-      if (len(total_data) >= 1000):
-        a = False
-        raise Breaking
-        break
     return show_frame
   except NameError or error:
     pass
