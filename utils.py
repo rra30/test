@@ -66,19 +66,29 @@ def draw_emotion(face_boxes, frame, scores):
   except NameError or error:
     pass
 def Main():
-    try:
-        confidence_threshold = 0.2  # 신뢰도 기준 설정
-
-        video_file = st.camera_input("")
-        if video_file:
-            frame = np.array(cv2.imdecode(np.frombuffer(video_file.read(), np.uint8), 1))
-            input_frame = preprocess(frame,input_layer_face)
-            results = compiled_model_face([input_frame])[output_layer_face]
-            face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)
-            show_frame = draw_emotion(face_boxes, frame, scores)
-            st.image(show_frame) 
-    except Exception as e:
-        st.error(f"Error: {e}")  # 오류 메시지 출력
-
-if __name__ == '__main__':
-    Main()
+  try:
+    camera = cv2.VideoCapture(source)
+    while(True):
+      ret, frame = camera.read()
+      if not ret:
+        a = True
+        break
+      input_frame = preprocess(frame, input_layer_face)
+      results = compiled_model_face([input_frame])[output_layer_face]
+      face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)
+      show_frame = draw_emotion(face_boxes, frame, scores)
+      cv2.imshow("Webcam", show_frame)
+      if cv2.waitKey(1) & 0xff == ord('q'):
+        a = False
+        raise Breaking
+    camera.release()
+    cv2.destroyAllWindows()
+  except NameError or error:
+    pass
+  try:
+    confidence_threshold = .2
+    source = 0
+    if __name__ == '__main__':
+      Main()
+  except NameError or error:
+    pass
