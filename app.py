@@ -51,25 +51,7 @@ else:
 
     if (source_model == "Utilize collected data"):
         try:
-            if (csv_directory != True): #  학습된 데이터로 이동
-                single_data = []
-                Multiple_data = [['neutral', 'happy', 'sad', 'surprise', 'anger']]
-
-
-                columns = ['neutral', 'happy', 'sad', 'surprise', 'anger']
-
-                for i in range(len(total_data)):
-                    for j in range(5):
-                        single_data.append(total_data[i][j])
-                    for a in range(5):
-                        Multiple_data[i].append(single_data[i])
-                    Multiple_data.append([])
-
-                f = open(f"{csv_name}.csv", "w")
-                writer = csv.writer(f)
-
-                writer.writerows(Multiple_data)
-                f.close()
+            normal_start()
         except:
             pass
 
