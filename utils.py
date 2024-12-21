@@ -66,29 +66,22 @@ def draw_emotion(face_boxes, frame, scores):
   except NameError or error:
     pass
 def Main():
-  try:
-    camera = cv2.VideoCapture(source)
-    while(True):
-      ret, frame = camera.read()
-      if not ret:
-        a = True
-        break
-      input_frame = preprocess(frame, input_layer_face)
-      results = compiled_model_face([input_frame])[output_layer_face]
-      face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)
-      show_frame = draw_emotion(face_boxes, frame, scores)
-      cv2.imshow("Webcam", show_frame)
-      if cv2.waitKey(1) & 0xff == ord('q'):
-        a = False
-        raise Breaking
-    camera.release()
-    cv2.destroyAllWindows()
-  except NameError or error:
-    pass
-  try:
-    confidence_threshold = .2
-    source = 0
-    if __name__ == '__main__':
-      Main()
-  except NameError or error:
-    pass
+    try:
+        confidence_threshold = 0.2  # 신뢰도 기준 설정
+
+        # Streamlit에서 카메라 입력 받기
+        video_file = st.camera_input("Take a picture")
+        if video_file:
+            # 이미지 처리 코드
+            frame = np.array(cv2.imdecode(np.frombuffer(video_file.read(), np.uint8), 1))
+            input_frame = preprocess(frame,input_layer_face)  # 여기에 적절한 input_layer_face 넣기
+            # 모델을 사용하여 결과를 처리 (여기서는 예시로 처리)
+            results = compiled_model_face([input_frame])[output_layer_face]
+            face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)
+            show_frame = draw_emotion(face_boxes, frame, scores)
+            st.image(show_frame)  # Streamlit에서 이미지를 표시
+    except Exception as e:
+        st.error(f"Error: {e}")  # 오류 메시지 출력
+
+if __name__ == '__main__':
+    Main()
