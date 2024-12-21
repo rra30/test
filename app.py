@@ -14,9 +14,10 @@ csv_directory = False
 
 directory = os.listdir()
 
-for i in range(len(directory)):
-    if (directory.endswith(".csv")):
+for filename in directory:
+    if filename.endswith(".csv"):
         csv_directory = True
+        csv_name = filename
 
 csv_name = ""
 
