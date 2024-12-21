@@ -60,6 +60,8 @@ else:
             pass
 
     elif (source_model == "Data Collection"):
+        st.sidebar.header("Output")
+        st.sidebar.radio("Choose",["WebCam","Video"])
         try:
             import Collection
             Main()
