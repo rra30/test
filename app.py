@@ -28,7 +28,7 @@ now = dt.datetime.now()
 
 #def Video():
 
-#def WebCam():
+def WebCam():
     def Main():
         try:
             camera = cv2.VideoCapture(source)
