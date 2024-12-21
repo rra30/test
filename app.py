@@ -20,8 +20,8 @@ for filename in directory:
         csv_directory = True
         csv_name = filename
 
+default_csv_name = "2024_12_21_12_38_19.csv"
 csv_name = "2024_12_21_12_38_19.csv"
-
 now = dt.datetime.now()
 
 if (csv_name == None or csv_name == ""):
@@ -41,7 +41,8 @@ st.sidebar.header("Setting")
 if (csv_directory == False):
     source_model = st.sidebar.radio("The data is not available. But You can use basic csv file",["Data Collection","Utilize collected data"])
     if source_model == "Data Collection":
-        #time.sleep(5)
+        st.sidebar.header("Output")
+        st.sidebar.radio("Choose",["WebCam","Video"])
         try:
             import Collection
             Main()
