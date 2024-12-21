@@ -1,69 +1,74 @@
 import streamlit as st
+import numpy as np
+import openvino as ov
 import cv2
+import io
 import PIL
 from PIL import Image
-import numpy
+import os
 import utils
-import io
-from camera_input_live import camera_input_live
+import time
+import datetime as dt
 
-def play_video(video_source):
-    camera = cv2.VideoCapture(video_source)
+csv_directory = False
 
-    st_frame = st.empty()
-    while(camera.isOpened()):
-        ret, frame = camera.read()
+directory = os.listdir()
 
-        if ret:
-            visualized_image = utils.predict_image(frame, conf_threshold)
-            st_frame.image(visualized_image, channels = "BGR")
-        else:
-            camera.release()
-            break
+for i in range(len(directory)):
+    if directory.endswitch(".csv"):
+    if (directory.endswitch(".csv")):
+        csv_directory = True
+
+csv_name = ""
+
+now = dt.datetime.now()
+
+if (csv_name == None or csv_name == ""):
+    csv_name = now.strftime('20%y_%m_%d_%H_%M_%S')
 
 st.set_page_config(
-    page_title="Age/Gender/Emotion",
-    page_icon="🌞",
+    page_title="I want go to home",
+    page_icon="✋",
     layout="centered",
     initial_sidebar_state="expanded")
 
-st.title("Age/Gender/Emotion Project :sun_with_face:")
-source_radio = st.sidebar.radio("Select Source",["IMAGE","VIDEO","WEBCAM"])
+st.title("Welcome to '자살 예방 게이트 키퍼' ✋")
+st.sidebar.header("Setting")
 
-st.sidebar.header("Confidence")
-conf_threshold = float(st.sidebar.slider("Select the Confidence Threshold", 10, 100, 20))/100
-
-
-input = None
-if source_radio == "IMAGE":
-    st.sidebar.header("Upload")
-    input = st.sidebar.file_uploader("Choose an image.", type=("jpg","png"))
-    
-    if input is not None:
-        uploaded_image = PIL.Image.open(input)
-        uploaded_image_cv =cv2.cvtColor(numpy.array(uploaded_image), cv2.COLOR_RGB2BGR)
-        visualized_image = utils.predict_image(uploaded_image_cv, conf_threshold = conf_threshold)
-        st.image(visualized_image, channels = "BGR")
+#for i in range(len(os.listdir())):
 
 
-temporary_location = None
-if source_radio == "VIDEO":
-    st.sidebar.header("Upload")
-    input = st.sidebar.file_uploader("Choose an video.", type=("mp4"))
+if (csv_directory == False):
+    source_model = st.sidebar.radio("The data is not available.",["Data Collection"])
+    if source_model == "Data Collection":
+        #time.sleep(5)
+        Data_Collection()
+else:
+    source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
 
-    if input is not None:
-        g = io.BytesIO(input.read())
-        temporary_location = "upload.mp4"
+    if (source_model == "Utilize collected data"):
+        try:
+            if (csv_directory != True): #  학습된 데이터로 이동
+                single_data = []
+                Multiple_data = [['neutral', 'happy', 'sad', 'surprise', 'anger']]
 
-        with open(temporary_location, "wb") as out:
-            out.write(g.read())
 
-        out.close()
-    if temporary_location is not None:
-        play_video(temporary_location)
-        if st.button("Replay", type="primary"):
+                columns = ['neutral', 'happy', 'sad', 'surprise', 'anger']
+
+                for i in range(len(total_data)):
+                    for j in range(5):
+                        single_data.append(total_data[i][j])
+                    for a in range(5):
+                        Multiple_data[i].append(single_data[i])
+                    Multiple_data.append([])
+
+                f = open(f"{csv_name}.csv", "w")
+                writer = csv.writer(f)
+
+                writer.writerows(Multiple_data)
+                f.close()
+        except:
             pass
 
-
-if source_radio == "WEBCAM":
-    play_video(0)
+    elif (source_model == "Data Collection"):
+        a
