@@ -33,7 +33,7 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded")
 
-st.title("Welcome to '자살 예방 게이트 키퍼' ✋")
+st.title("Welcome to '자살 게이트 키퍼' ✋")
 st.sidebar.header("Setting")
 
 #for i in range(len(os.listdir())):
