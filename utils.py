@@ -9,7 +9,7 @@ import csv
 import datetime as dt
 a = True
 total_data = []
-csv_name = None
+csv_name = ""
 
 now = dt.datetime.now()
 
