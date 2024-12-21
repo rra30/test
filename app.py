@@ -24,6 +24,9 @@ default_csv_name = "2024_12_21_12_38_19.csv"
 csv_name = "2024_12_21_12_38_19.csv"
 now = dt.datetime.now()
 
+#def Image():
+
+
 if (csv_name == None or csv_name == ""):
     csv_name = now.strftime('20%y_%m_%d_%H_%M_%S')
 
