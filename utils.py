@@ -69,17 +69,14 @@ def Main():
     try:
         confidence_threshold = 0.2  # 신뢰도 기준 설정
 
-        # Streamlit에서 카메라 입력 받기
-        video_file = st.camera_input("Take a picture")
+        video_file = st.camera_input("")
         if video_file:
-            # 이미지 처리 코드
             frame = np.array(cv2.imdecode(np.frombuffer(video_file.read(), np.uint8), 1))
-            input_frame = preprocess(frame,input_layer_face)  # 여기에 적절한 input_layer_face 넣기
-            # 모델을 사용하여 결과를 처리 (여기서는 예시로 처리)
+            input_frame = preprocess(frame,input_layer_face)
             results = compiled_model_face([input_frame])[output_layer_face]
             face_boxes, scores = find_faceboxes(frame, results, confidence_threshold)
             show_frame = draw_emotion(face_boxes, frame, scores)
-            st.image(show_frame)  # Streamlit에서 이미지를 표시
+            st.image(show_frame) 
     except Exception as e:
         st.error(f"Error: {e}")  # 오류 메시지 출력
 
