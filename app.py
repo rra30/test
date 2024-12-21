@@ -31,7 +31,7 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded")
 
-st.title("Welcome to 'I want go home' ✋")
+st.title("Welcome to '자살 예방 게이트 키퍼' ✋")
 st.sidebar.header("Setting")
 
 for i in range(len(os.listdir())):
@@ -40,7 +40,9 @@ for i in range(len(os.listdir())):
 if (csv_directory == False):
     source_model = st.sidebar.radio("The data is not available.",["Data Collection"])
     if source_model == "Data Collection":
-        time.sleep(5)
+        #time.sleep(5)
+        Data_Collection()
+        
 else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
     
