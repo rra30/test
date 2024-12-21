@@ -78,9 +78,11 @@ else:
             
     elif (source_model == "Data Collection"):
         st.sidebar.header("Output")
-        st.sidebar.radio("Choose",["WebCam","Video"])
+        sou_True_Col_radio = st.sidebar.radio("Choose",["WebCam","Video"])
         try:
-            import Collection
-            Main()
+            if (sou_True_Col_radio == "WebCam"):
+                WebCam()
+            else:
+                Video()
         except:
             pass
