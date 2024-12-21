@@ -53,11 +53,11 @@ else:
     if (source_model == "Utilize collected data"):
         st.sidebar.header("Output")
         st.sidebar.radio("Choose",["WebCam","Video","Image"])
-            try:
-                import utils
-                Main()
-            except:
-                pass
+        try:
+            import utils
+            Main()
+        except:
+            pass
 
     elif (source_model == "Data Collection"):
         try:
