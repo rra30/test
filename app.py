@@ -65,6 +65,7 @@ else:
                     else:
                         camera.release()
                         break
+            play_video()
         except:
             pass
 
