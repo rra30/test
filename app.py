@@ -42,7 +42,6 @@ if (csv_directory == False):
     if source_model == "Data Collection":
         #time.sleep(5)
         Data_Collection()
-        
 else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
     
