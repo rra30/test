@@ -43,7 +43,7 @@ if (csv_directory == False):
     if source_model == "Data Collection":
         #time.sleep(5)
         try:
-            a
+            Col_start()
         except:
             pass
 else:
@@ -74,4 +74,7 @@ else:
             pass
 
     elif (source_model == "Data Collection"):
-        a
+        try:
+            Col_start()
+        except:
+            pass
