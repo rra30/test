@@ -51,15 +51,15 @@ if (csv_directory == False):
     else:
         st.sidebar("Output")
         sou_Fal_Uti_radio = st.sidebar.radio("Choose",["WebCam","Video","Image"])
-            try:
-                if (source_radio == "WebCam"):
-                    WebCam()
-                elif (source_radio == "Video"):
-                    Video()
-                else:
-                    Image()
-            except:
-                pass
+        try:
+            if (source_radio == "WebCam"):
+                WebCam()
+            elif (source_radio == "Video"):
+                Video()
+            else:
+                Image()
+        except:
+            pass
 else:
     source_model = st.sidebar.radio("Select",["Data Collection","Utilize collected data"])
 
